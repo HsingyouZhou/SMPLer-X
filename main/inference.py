@@ -149,6 +149,7 @@ def main():
             smplx_pred['betas'] = out['smplx_shape'].reshape(-1,10).cpu().numpy()
             smplx_pred['expression'] = out['smplx_expr'].reshape(-1,10).cpu().numpy()
             smplx_pred['transl'] =  out['cam_trans'].reshape(-1,3).cpu().numpy()
+            smplx_pred['joints_wo_ra'] =  out['joints_wo_ra'].reshape(-1,3).cpu().numpy()
             save_path_smplx = os.path.join(args.output_folder, 'smplx')
             os.makedirs(save_path_smplx, exist_ok= True)
 
