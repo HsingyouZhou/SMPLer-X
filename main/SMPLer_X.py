@@ -389,6 +389,7 @@ class Model(nn.Module):
             out['lhand_bbox'] = lhand_bbox
             out['rhand_bbox'] = rhand_bbox
             out['face_bbox'] = face_bbox
+            out['joints_wo_ra'] = joint_cam_wo_ra
             if 'smplx_shape' in targets:
                 out['smplx_shape_target'] = targets['smplx_shape']
             if 'img_path' in meta_info:
