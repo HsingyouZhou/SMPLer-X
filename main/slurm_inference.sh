@@ -28,15 +28,15 @@ echo $end_count
 
 # inference
 PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
-srun -p ${PARTITION} \
-    --job-name=${JOB_NAME} \
-    --gres=gpu:${GPUS_PER_NODE} \
-    --ntasks=${GPUS} \
-    --ntasks-per-node=${GPUS_PER_NODE} \
-    --cpus-per-task=${CPUS_PER_TASK} \
-    --kill-on-bad-exit=1 \
-    ${SRUN_ARGS} \
-    python inference.py \
+#srun -p ${PARTITION} \
+#    --job-name=${JOB_NAME} \
+#    --gres=gpu:${GPUS_PER_NODE} \
+#    --ntasks=${GPUS} \
+#    --ntasks-per-node=${GPUS_PER_NODE} \
+#    --cpus-per-task=${CPUS_PER_TASK} \
+#    --kill-on-bad-exit=1 \
+#    ${SRUN_ARGS} \
+python inference.py \
     --num_gpus ${GPUS_PER_NODE} \
     --exp_name output/demo_${JOB_NAME} \
     --pretrained_model ${CKPT} \
